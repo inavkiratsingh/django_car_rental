@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.nav {
+    width: 100%;
+    z-index: 999;
+    padding: 35px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: sans-serif;
+}
+
+.nav .logo {
+    width: 50px;
+}
+
+.nav .logo img {
+    width: 100%;
+}
+
+.nav .nav-links a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    margin: 0 30px;
+}
+
+.home{
+    width: 100%;
+    height: 100%;
+}
+
+.home .home-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.home .home-wrapper .content-home{
+    padding-left: 50px;
+}
+
+.home .home-wrapper .content-home h1{
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 100px;
+}
+
+.home .home-wrapper .content-home p{
+    font-size: 1.3rem;
+    line-height: 35px;
+    margin-top: 30px;
+    padding-right: 100px;
+}
+
+.home .home-wrapper .image-home{
+    min-width: 60%;
+}
+
+.home .home-wrapper .image-home img{
+    width: 100%;
+    margin-top: 200px;
+}
+
+.home .brands{
+    background: black;
+    width: 100%;
+    height: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.all_cars{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.05);
+}
+
+.all_cars .header_filter{
+    width: 100%;
+    height: 100px;
+    top: 0;
+    left: 0;
+    display: flex;
+    position: fixed;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background: white;
+}
+
+.all_cars .header_filter .fl{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(0,0,0,.1);
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.all_cars .header_filter .fl i{
+    font-size: 1.8rem;
+    color: rgb(0, 0, 0, .6);
+    padding-right: 8px;
+}
+
+.all_cars .header_filter .fl span i{
+    padding: 0;
+    font-size: .7;
+}
+
+.all_cars .header_filter .fl span{
+    position: absolute;
+    right: 10px;
+}
+
+.all_cars .header_filter p{
+    color: rgb(0, 0, 0, .65);
+    font-size: .7rem;
+}
+
+.all_cars .header_filter h3{
+    font-size: 1rem;
+    line-height: 15px;
+    font-weight: 500;
+}
+
+.all_cars .header_filter .icon i{
+    font-size: 4rem;
+}
+
+.all_cars .header_filter .place{
+    width: 300px;
+}
+
+.all_cars .header_filter button{
+    padding: 13px 30px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.all_cars .cars_wrapper{
+    height: 100%;
+    position: relative;
+    margin-top: 100px;    
+
+}
+
+.all_cars .cars_wrapper .filter{
+    width: 400px;
+    height: 100%;
+    padding: 20px 40px;
+    position: fixed;
+    background-color: white;
+    top: 100px;
+}
+
+.all_cars .cars_wrapper .all_cars_card{
+    margin-left: auto;
+    width: 73%;
+    padding: 30px;
+}
+
+.all_cars .cars_wrapper .filter .form-group{
+    padding: 20px 0;
+}
+
+.main-l{
+    color: #5f5f5f;
+    font-size: 0.8rem;
+}
+
+.all_cars .cars_wrapper .filter .form-group label{
+    line-height: 32px;
+}
+
+.all_cars .cars_wrapper .all_cars_card .card{
+    width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px rgba(0,0,0,.05);
+    overflow: hidden;
+}
+
+.all_cars .cars_wrapper .all_cars_card .header_card{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .img-card{
+    width: 100%;
+    height: 150px;
+    background-color: rgba(0,0,0,.09);
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .content-card{
+    padding: 15px;
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .content-card .heading-card{
+    display: flex;
+    justify-content: space-between;
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .content-card .heading-card p{
+    font-size: .7rem;
+    font-weight: 600;
+    height: 20px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background-color: #E9F7EF;
+    color: #22A65D; 
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .content-card h4{
+    margin-top: 4px;
+    color: grey;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .content-card .features{
+    margin-bottom: 20px;
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .content-card .features .features-3{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .content-card .features p{
+    color: rgb(0, 0, 0, .5);
+    margin-top: 10px;
+    font-size: .8rem;
+    font-weight: 500;
+    padding-bottom: 8px;
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .content-card .features span{
+    padding-right: 20px;
+    padding-bottom: 8px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .content-card .features span i{
+    font-size: 1.5rem;
+    color: rgba(0,0,0,.8);
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .content-card .price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .content-card .price .button{
+    padding: 11px 20px;
+    border-radius: 10px;
+    height: 40px;
+    font-size: 1rem;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .content-card .price .amount h3{
+    line-height: 20px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.all_cars .cars_wrapper .all_cars_card .card .content-card .price .amount p{
+    color: rgba(0,0,0,.6);
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.count_cars{
+    color: rgba(0,0,0,.6);
+    font-weight: 500;
+}
+
+.sort span{
+    color: rgba(0,0,0,.6);
+    padding-right: 8px;
+}
+
+.sort select{
+    appearance: none;
+    font-size: 1rem;
+    padding: 8px 8px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.01);
+    color: black;
+    font-weight: 500;
+    border: none;
+    border: 1px solid rgba(0,0,0,.3);
+}
+
+select:focus{
+    border: 1px solid;
+    border-color: blue;
+}
+
+
+.app{
+    width: 100%;
+    height: 100vh;
+    padding: 0 200px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app .app-img{
+    min-width: 50%;
+}
+
+.app .app-content .grey{
+    color: rgba(0,0,0,.3);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+.app .app-content h2{
+    line-height: 50px;
+    font-size: 3.3rem;
+    font-weight: 800;
+    padding-bottom: 20px;
+}
+
+.app .app-content p{
+    font-size: 1.2rem;
+    padding-right: 50px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.app .app-content .button{
+    background-color: black;
+    width: 230px;
+    color: white;
+    padding: 15px 40px;
+    border-radius:50px;
+    margin-top: 30px;
+}
+
+.app .app-content .button i{
+    padding-right: 10px;
+}
