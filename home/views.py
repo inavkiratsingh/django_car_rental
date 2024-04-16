@@ -1,10 +1,11 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 import oracledb
 
 session = []
 
+
 def home(request):
-    print('session is',session)
+    print('session is', session)
     return render(request, 'index.html')
 
 
@@ -15,12 +16,11 @@ def signup(request):
         try:
             # Create a cursor
             cur = conn.cursor()
-            cur2 = conn.cursor()
 
             username = request.POST['username']
             email = request.POST['email']
             password = request.POST['password']
-            
+
             print(username, password, email)
 
             email_check = """SELECT * FROM USERS where email = :1"""
@@ -40,11 +40,11 @@ def signup(request):
             else:
                 insert = conn.cursor()
                 insert_sql = """INSERT INTO USERS(username, email, password) values(:1, :2, :3)"""
-                result = insert.execute(insert_sql, (username,email, password))
+                result = insert.execute(
+                    insert_sql, (username, email, password))
                 session.append(email)
                 print(result)
                 conn.commit()
-                
 
         except oracledb.Error as error:
             print('Error occurred:', error)
@@ -52,6 +52,7 @@ def signup(request):
             cur.close()
             conn.close()
     return render(request, 'signup.html')
+
 
 def login_user(request):
 
@@ -61,17 +62,17 @@ def login_user(request):
         try:
             # Create a cursor
             cur = conn.cursor()
-            
+
             username = request.POST['username']
             password = request.POST['password']
             print(username, password)
             sql = """SELECT * FROM USERS where username = :1 and password = :2"""
-            cur.execute(sql, (username,password))
-            
+            cur.execute(sql, (username, password))
+
             # Fetch the result
             result = cur.fetchone()
             print(result)
-            if result in (None,'', ' '):
+            if result in (None, '', ' '):
                 print('False password')
             else:
                 session.append(result[2])
@@ -81,5 +82,16 @@ def login_user(request):
         finally:
             cur.close()
             conn.close()
-    
+
     return render(request, 'login.html')
+
+
+def avail_cars(request):
+    conn = oracledb.connect(
+        user='unique_car', password='123', host="localhost", port=1521)
+    cur = conn.cursor()
+    cur.execute("select * from cars")
+    result = cur.fetchall()
+    contexts = {'res':result}
+
+    return render(request, 'all_cars.html', contexts)

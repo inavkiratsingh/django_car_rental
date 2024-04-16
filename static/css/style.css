@@ -208,6 +208,11 @@ body {
     line-height: 32px;
 }
 
+.all_cars .cars_wrapper .all_cars_card .cards{
+    display: flex;
+    gap: 30px;
+}
+
 .all_cars .cars_wrapper .all_cars_card .card{
     width: 300px;
     background-color: #fff;

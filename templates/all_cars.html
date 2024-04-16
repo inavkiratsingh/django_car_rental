@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/checkbox.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>Car Rental Project | WEB-EN</title>
+</head>
+
+<body>
+    <section class="all_cars">
+        <div class="header_filter">
+            <div class="icon">
+                <i class="bx bx-chevrons-right"></i>
+            </div>
+            <div class="place fl">
+                <div class="icon-con">
+                    <p>Leaving From</p>
+                    <h3>Amritsar, Punjab</h3>
+                </div>
+                <span><i class="bx bxs-chevron-down"></i></span>
+            </div>
+            <div class="pickup-date fl">
+                <i class="bx bx-calendar"></i>
+                <div class="icon-con">
+                    <p>Pick-up Date</p>
+                    <h3>9th March</h3>
+                </div>
+                <span><i class="bx bxs-chevron-down"></i></span>
+            </div>
+            <div class="dropoff-date fl">
+                <i class="bx bx-alarm"></i>
+                <div class="icon-con">
+                    <p>Drop-off Date</p>
+                    <h3>9th March</h3>
+                </div>
+                <span><i class="bx bxs-chevron-down"></i></span>
+            </div>
+            <div class="pickup-time fl">
+                <i class="bx bx-alarm"></i>
+                <div class="icon-con">
+                    <p>Pick-up time</p>
+                    <h3>10:30 a.m.</h3>
+                </div>
+                <span><i class="bx bxs-chevron-down"></i></span>
+            </div>
+            <div class="droppoff-time fl">
+                <i class="bx bx-alarm"></i>
+                <div class="icon-con">
+                    <p>Drop-off time</p>
+                    <h3>10:30 a.m.</h3>
+                </div>
+                <span><i class="bx bxs-chevron-down"></i></span>
+            </div>
+            <button>Search</button>
+        </div>
+        <div class="cars_wrapper">
+            <div class="filter">
+                <h3>Filter By</h3>
+
+                <form action="">
+                    <div class="form-group">
+                        <label class="main-l">Car type</label><br />
+
+                        <input type="checkbox" id="mini" name="car-type" />
+                        <label for="mini">Mini</label><br />
+
+                        <input type="checkbox" id="sdan" name="car-type" />
+                        <label for="sdan">Sdan</label><br />
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <label class="main-l">Capacity</label><br />
+
+                        <input type="radio" id="two" name="pasangers" />
+                        <label for="two">2-5</label><br />
+
+                        <input type="radio" id="six" name="pasangers" />
+                        <label for="six">6 or more</label><br />
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <label class="main-l">Price</label><br />
+
+                        <input type="range" id="vol" name="vol" min="0" max="50" onchange="console.log(this.value)" />
+                    </div>
+                </form>
+            </div>
+            <div class="all_cars_card">
+                <div class="header_card">
+                    <span class="count_cars">15 results</span>
+                    <div class="sort">
+                        <span>Sort by</span>
+                        <select name="sort" id="sort">
+                            <option value="l_h">Low to High</option>
+                            <option value="h_l">High to Low</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="cards">
+                    {% for car in res %}
+                    <div class="card">
+                        <div class="img-card"></div>
+                        <div class="content-card">
+                            <div class="heading-card">
+                                <h3>{{ car.2 }}</h3>
+                                <p>SPECIAL DEAL</p>
+                            </div>
+                            <h4>Tesla Model S</h4>
+                            <div class="features">
+                                <p>Features</p>
+                                <div class="features-3">
+                                    <span><i class="bx bx-group"></i> 5</span>
+                                    <span><i class="bx bxs-battery-full"></i> Electric</span>
+                                    <span><i class="bx bxs-tachometer"></i> Unlimited milege</span>
+                                </div>
+                            </div>
+                            <hr style="border-color: rgba(0, 0, 0, .2);" />
+                            <div class="price">
+                                <div class="amount">
+                                    <h3>$124.00</h3>
+                                    <p>per day</p>
+                                </div>
+                                <div class="button">Reserve Deal</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
