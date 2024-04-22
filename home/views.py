@@ -88,7 +88,6 @@ def login_user(request):
 
 
 def avail_cars(request):
-
     if not session:
         return render(request, 'login.html')
     conn = oracledb.connect(
