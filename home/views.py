@@ -76,6 +76,7 @@ def login_user(request):
                 print('False password')
             else:
                 session.append(result[2])
+                print(session)
                 return redirect('/')
         except oracledb.Error as error:
             print('Error occurred:', error)
@@ -87,6 +88,9 @@ def login_user(request):
 
 
 def avail_cars(request):
+
+    if not session:
+        return render(request, 'login.html')
     conn = oracledb.connect(
         user='unique_car', password='123', host="localhost", port=1521)
     cur = conn.cursor()
